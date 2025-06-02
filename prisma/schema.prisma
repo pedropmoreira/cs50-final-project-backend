@@ -20,6 +20,7 @@ model transactions {
   type                transaction_type
   value               Decimal          @db.Decimal
   date_of_transaction DateTime         @db.Date
+  description         String?          @db.VarChar(255)
   category            category         @relation(fields: [id_category], references: [id_category], onDelete: Cascade)
   users               users            @relation(fields: [id_user], references: [id_user], onDelete: Cascade)
 }

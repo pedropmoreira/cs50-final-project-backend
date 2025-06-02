@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-const createCategory = async (req,res) => 
+export const createTransaction = async (req,res) => 
 {
     const {id_user,id_category,type,value, date_of_transaction} = req.body;
 
