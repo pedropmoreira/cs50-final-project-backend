@@ -53,7 +53,7 @@ export const getUserById = async (req,res) =>
         res.json
         ({
             data:user,
-            message: "User find with success!"
+            message: "User found with success!"
         })
     }
     catch(error)
@@ -137,7 +137,7 @@ export const updateUser = async (req,res) =>
         }
 
         // we need to check if the user provide something in the body so lets use the lenght
-        if (Object.keys(dataToUpdate).length == 0)
+        if (Object.keys(dataToUpdate).length === 0)
         {
             return res.status(400).json
             ({
