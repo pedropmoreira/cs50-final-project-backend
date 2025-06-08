@@ -6,7 +6,7 @@ export default function authUser (req,res,next) {
 
     if(!authHeader)
     {
-        return res.status(401).json({message:"You must me logged to access this!"})
+        return res.status(401).json({message:"You must be logged to access this!"})
     }
     const token = authHeader.split(' ')[1]
 
@@ -15,13 +15,13 @@ export default function authUser (req,res,next) {
         jwt.verify(token , process.env.JWT_SECRET,(err,user)=>{
             
             if(err)
-            {return res.status(401).json({message:"You must me logged to access this!"})}
+            {return res.status(401).json({message:"You must be logged to access this!"})}
 
             next()
         })
     }
     else
     {
-        return res.status(401).json({message:"You must me logged to access this"})
+        return res.status(401).json({message:"You must be logged to access this"})
     }
 }
